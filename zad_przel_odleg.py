@@ -10,4 +10,4 @@ def przelicz_metry(metry: int):
         'all': [kilometry, mile, mile_morskie]
             }
 
-print(przelicz_metry(5456))
+print(przelicz_metry(1234))
