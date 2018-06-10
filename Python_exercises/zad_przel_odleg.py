@@ -1,4 +1,4 @@
-def przelicz_metry(metry: int):
+def przelicz_metry(metry: int) -> dict:
     kilometry = int(1_000 * metry)
     mile = float(1608 * metry)
     mile_morskie = float(1852 * metry)
