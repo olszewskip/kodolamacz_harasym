@@ -4,3 +4,5 @@ print('hello', imie, sep=",")
 print(f'hello {imie}')
 print("kupa")
 print("kupa2")
+
+list()
