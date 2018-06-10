@@ -1,6 +1,6 @@
 from random import shuffle
 
-DATA = [
+DATABASE = [
     ("Sepal length", "Sepal width", "Petal length", "Petal width", "Species"),
     (5.1, 3.5, 1.4, 0.2, "I. setosa"),
     (4.9, 3.0, 1.4, 0.2, "I. setosa"),
@@ -25,8 +25,9 @@ DATA = [
     (4.9, 2.5, 4.5, 1.7, "I. virginica"),
 ]
 
-header = DATA[0]
-data = DATA[1:]
+
+header = DATABASE[0]
+data = DATABASE[1:]
 shuffle(data)
 
 #features = {
@@ -37,6 +38,8 @@ shuffle(data)
 
 
 FRACTION = 0.8
+
+
 div_idx = int(len(data) * FRACTION)
 learn_data, test_data = data[:div_idx], data[div_idx:]
 
@@ -44,4 +47,4 @@ print([raw[0] for raw in learn_data[:5]])
 print(len(learn_data))
 print([raw[0] for raw in test_data[:5]])
 print(len(test_data))
-print(len(learn_data) / len(a))
+print(len(learn_data) / len(DATABASE))
