@@ -1,5 +1,5 @@
 def is_even() -> (int, bool):
-    liczba_str = input('Podaj liczbę z conjwyzej jedna kropka jako znakiem decymalnym: ').strip()
+    liczba_str = input('Podaj liczbę z co najwyzej jednym znakiem decymalnym: ').strip()
     if "." in liczba_str:
         liczba = round(float(liczba_str))
     elif "," in liczba_str:
