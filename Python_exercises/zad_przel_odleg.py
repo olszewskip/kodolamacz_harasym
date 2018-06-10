@@ -1,5 +1,5 @@
 def przelicz_metry(metry: int):
-    kilometry = 1_000 * metry
+    kilometry = int(1_000 * metry)
     mile = float(1608 * metry)
     mile_morskie = float(1852 * metry)
 
