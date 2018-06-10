@@ -1,4 +1,11 @@
-def spell_nums(nums):
+def int_to_str(nums: int) -> str:
+    """
+    >>> int_to_str(1969)
+    'one nine six nine'
+
+    >>> int_to_str(31337)
+    'three one three three seven'
+    """
     spelling = {
         0: 'zero',
         1: 'one',
@@ -12,6 +19,8 @@ def spell_nums(nums):
         9: 'nine'
     }
     digits = [int(d) for d in str(nums)]
-    print(" ".join([spelling[digit] for digit in digits]))
+    words = [spelling[digit] for digit in digits]
+    return " ".join(words)
 
-spell_nums(973)
+
+int_to_str(973)
