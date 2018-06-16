@@ -9,14 +9,18 @@ def matrix_multiplication(A, B):
     n = len(B)
 
     result_rows = []
+
     for Arow in A:
         result_row = []
+
         for Bcol_idx in range(n):
             products = [Arow[i] * B[i][Bcol_idx] for i in range(n)]
             result_row.append(sum(products))
+
         result_rows.append(result_row)
 
     return result_rows
+
 
 
 import numpy as np

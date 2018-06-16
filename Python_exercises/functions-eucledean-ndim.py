@@ -19,7 +19,8 @@ def euclidean_distance_n_dimensions(A, B):
         ...
     ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
     """
-    if len(A) != len(B):
+
+    if not len(A) == len(B):
         raise ValueError('Punkty muszą być w przestrzeni tylu-samo wymiarowej')
 
     squares = [(A[i] - B[i])**2 for i in range(len(A))]

@@ -3,9 +3,9 @@ from pprint import pprint
 SPLITBYSIGN = ':'
 COMMENTSIGN = '#'
 
-passwd_path = './passwd_file.txt'
-shadow_path = './shadow_file.txt'
-group_path = './group_file.txt'
+passwd_path = '/etc/passwd'
+shadow_path = '/etc/shadow'
+group_path = '/etc/group'
 
 user_data_base = {}  # dict of dicts, {login: {'login': login, ...}, ...}
 
@@ -87,7 +87,7 @@ with open(shadow_path) as file:
             user_data_base[login]['algorithm'] = algorithm
             user_data_base[login]['lastchanged'] = date_changed
 
-# handle group
+#handle group
 with open(group_path) as file:
     for line in file:
         line = line.strip()
@@ -103,9 +103,10 @@ with open(group_path) as file:
 
             if login in user_data_base:
 
-                if 'groups' in user_data_base[login] \
-                        and group not in user_data_base[login]['groups']:
-                    user_data_base[login]['groups'].append(group)
+                if 'groups' in user_data_base[login]:
+
+                    if group not in user_data_base[login]['groups']:
+                        user_data_base[login]['groups'].append(group)
                 else:
                     user_data_base[login]['groups'] = [group]
 
