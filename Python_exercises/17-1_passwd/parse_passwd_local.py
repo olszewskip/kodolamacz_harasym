@@ -103,10 +103,9 @@ with open(group_path) as file:
 
             if login in user_data_base:
 
-                if 'groups' in user_data_base[login]:
-
-                    if group not in user_data_base[login]['groups']:
-                        user_data_base[login]['groups'].append(group)
+                if 'groups' in user_data_base[login] \
+                        and group not in user_data_base[login]['groups']:
+                    user_data_base[login]['groups'].append(group)
                 else:
                     user_data_base[login]['groups'] = [group]
 
