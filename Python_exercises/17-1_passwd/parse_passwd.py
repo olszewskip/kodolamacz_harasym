@@ -1,5 +1,3 @@
-from pprint import pprint
-
 SPLITBYSIGN = ':'
 COMMENTSIGN = '#'
 
@@ -77,9 +75,9 @@ with open(shadow_path) as file:
 
             algorithm = DECODE_ALGOS[algo_code]
 
-        from datetime import datetime, timedelta
+        from datetime import date, timedelta
 
-        date_changed = datetime(1970, 1, 1) + timedelta(days=int(days_since_change))
+        date_changed = date(1970, 1, 1) + timedelta(days=int(days_since_change))
 
         if login in user_data_base:
             user_data_base[login]['locked'] = locked
@@ -115,4 +113,5 @@ for login, user in user_data_base.items():
 
 users = [dict_ for dict_ in user_data_base.values()]
 
+from pprint import pprint
 pprint(users)
